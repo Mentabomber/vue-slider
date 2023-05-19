@@ -76,6 +76,7 @@
 .img-thumb-nail{
     height: calc(100% / 5);
     filter: brightness(50%);
+    
 }
 
 .thumb-nail-selected{

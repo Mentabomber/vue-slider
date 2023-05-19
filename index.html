@@ -13,15 +13,15 @@
         <div id="app">
             <div id="container">
 
-                <button id="arrow-up-carousel"><i class="fa-solid fa-arrow-up"></i> 
+                <button id="arrow-up-carousel" @click="this.arrowUp"><i class="fa-solid fa-arrow-up"></i> 
                 </button>
-                <button id="arrow-down-carousel"><i class="fa-solid fa-arrow-down"></i>
+                <button id="arrow-down-carousel" @click="this.arrowDown"><i class="fa-solid fa-arrow-down"></i>
                 </button>
 
-                <img :src="this.images[index]" alt="" class="">
-            <div id="thumb-nail">
-                <img v-for="(image, index) in images" :src="this.images[index]" alt="" class="img-thumb-nail">
-            </div>
+                <img :src="this.images[indexImmagineAttiva]" alt="" class="">
+                <div id="thumb-nail">
+                    <img v-for="(image, index) in images" :src="this.images[index]" alt="" :class="indexImmagineAttiva === index ? 'thumb-nail-selected' : '' " class="img-thumb-nail">
+                </div>
                 <button id="start-button" class="hidden">
                     Start
                 </button>
@@ -31,6 +31,7 @@
                 <button id="reverse-button">
                     Reverse
                 </button>
+            </div>
         </div>
 
         
