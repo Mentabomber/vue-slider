@@ -35,7 +35,7 @@ createApp({
             }
         },
         autoPlay(){
-            return setInterval(arrowDown, 3000);
+            return setInterval(this.arrowDown, 3000);
         },
         autoPlayReverse(){
             return setInterval(function(){
@@ -56,7 +56,7 @@ createApp({
             }
     },
     mounted(){
-
+        this.autoPlay();
     }
 
 }).mount('#app')
