@@ -36,7 +36,11 @@ createApp({
             }
         },
         autoPlay(){
-            return setInterval(this.arrowDown, 3000);
+            if(this.interval === undefined){
+                
+                return this.interval = setInterval(this.arrowDown, 3000);
+            }
+            
         },
         autoPlayReverse(){
             return setInterval(function(){
@@ -57,12 +61,11 @@ createApp({
         },
         stopAutoPlay(){
             clearInterval(this.interval);
-            this.inteval = undefined;
+            this.interval = undefined;
         }
     },
     mounted(){
-        // this.interval = 
-        this.autoPlay();
+        this.interval = this.autoPlay();
 
     }
 

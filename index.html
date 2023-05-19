@@ -11,7 +11,7 @@
 <body>
 
         <div id="app">
-            <div id="container" @mouseover="this.stopAutoPlay" >
+            <div id="container" >
 
                 <button id="arrow-up-carousel" @click="this.arrowUp"><i class="fa-solid fa-arrow-up" ></i> 
                 </button>
@@ -19,7 +19,7 @@
                 </button>
 
                 <img :src="this.images[indexImmagineAttiva]" alt="" class="">
-                <div id="thumb-nail">
+                <div id="thumb-nail" @mouseover="this.stopAutoPlay" @mouseleave="this.autoPlay">
                     <img v-for="(image, index) in images" :src="image" alt="" :class="indexImmagineAttiva === index ? 'thumb-nail-selected' : '' " class="img-thumb-nail" @click="this.indexImmagineAttiva = index">
                 </div>
                 <button id="start-button" class="hidden">
