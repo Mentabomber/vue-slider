@@ -36,8 +36,8 @@ createApp({
             }
         },
         autoPlay(){
-            if(this.interval === undefined){
-                
+            if(this.interval == undefined){
+                console.log(this.interval);
                 return this.interval = setInterval(this.arrowDown, 3000);
             }
             
@@ -64,9 +64,13 @@ createApp({
             this.interval = undefined;
         }
     },
+    beforeMount(){
+        console.log(this.interval);
+    },
     mounted(){
-        this.interval = this.autoPlay();
-
+        // this.interval = this.autoPlay();
+        // this.autoPlay();
+    
     }
 
 }).mount('#app')
