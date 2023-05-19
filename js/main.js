@@ -14,6 +14,7 @@ const { createApp } = Vue;
 createApp({
     data(){
         return{
+            counter : 2,
             indexImmagineAttiva : 0,
             images: ["img/01.webp", "img/02.webp", "img/03.webp", "img/04.webp", "img/05.webp"],
             title: ["Marvel's Spiderman Miles Morale", 'Ratchet & Clank: Rift Apart', 'Fortnite', 'Stray', "Marvel's Avengers",],
@@ -32,7 +33,27 @@ createApp({
             if(this.indexImmagineAttiva === this.images.length){
                 this.indexImmagineAttiva = 0;
             }
-        }
+        },
+        autoPlay(){
+            return setInterval(arrowDown, 3000);
+        },
+        autoPlayReverse(){
+            return setInterval(function(){
+                
+                console.log(counter + "counter");
+                if (counter % 2 == 0){
+        
+                    arrowDown();
+                    
+                }
+                else if(counter % 2 == 1){
+        
+                    arrowUp();
+                
+                }  
+            }
+            , 3000);
+            }
     },
     mounted(){
 
@@ -49,85 +70,15 @@ createApp({
 
 
 
-// bottone down per muovermi da un'immagine verso l'altra dall'alto verso il basso
-
-// let  buttonInteractionUp = document.getElementById("arrow-down-carousel");
-// buttonInteractionUp.addEventListener('click', arrowUp);
-
-// function arrowUp (){
-
-//         immagini[indexImmagineAttiva].classList.remove("active");
-
-//         immaginiThumbNail[indexImmagineAttiva].classList.remove("thumb-nail-selected");
-//         indexImmagineAttiva++;
-
-//         if(indexImmagineAttiva == imageList.length ){
-//             indexImmagineAttiva = 0;
-
-//         }
-//         immagini[indexImmagineAttiva].classList.add("active");
-
-//         immaginiThumbNail[indexImmagineAttiva].classList.add("thumb-nail-selected");
-
-//         console.log(indexImmagineAttiva);
-// };
-
-// // bottone down per muovermi da un'immagine verso l'altra dal basso verso l'alto
-
-// let  buttonInteractionDown = document.getElementById("arrow-up-carousel");
-
-// buttonInteractionDown.addEventListener('click', arrowDown);
-    
 
 
-// function arrowDown(){
 
-//         immagini[indexImmagineAttiva].classList.remove("active");
-
-//         immaginiThumbNail[indexImmagineAttiva].classList.remove("thumb-nail-selected");
-
-//         if(indexImmagineAttiva == 0 ){
-//             indexImmagineAttiva = imageList.length;
-
-//         }
-
-//         indexImmagineAttiva--;
-
-//         immagini[indexImmagineAttiva].classList.add("active");
-
-//         immaginiThumbNail[indexImmagineAttiva].classList.add("thumb-nail-selected");
-        
-//         console.log(indexImmagineAttiva);
-// };
 
 // // Aggiungere funzionalità di autoplay: dopo un certo periodo di tempo (3 secondi) l’immagine attiva dovrà cambiare alla successiva.
 
 
-// function autoPlay(){
-// return setInterval(arrowDown, 3000);
-// }
 
-// let counter = 2;
 
-// function autoPlayReverse(){
-//     return setInterval(function(){
-        
-//         console.log(counter + "counter");
-//         if (counter % 2 == 0){
-
-//             arrowDown();
-            
-//         }
-//         else if(counter % 2 == 1){
-
-//            arrowUp();
-     
-//         }  
-//     }
-//     , 3000);
-//     }
-
-// let clock = autoPlay();
 
 // // stop button
 
