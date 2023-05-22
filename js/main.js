@@ -69,7 +69,7 @@ createApp({
     },
     mounted(){
         // this.interval = this.autoPlay();
-        // this.autoPlay();
+        this.autoPlay();
     
     }
 
