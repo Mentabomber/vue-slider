@@ -17,8 +17,13 @@
                 </button>
                 <button id="arrow-down-carousel" @click="this.arrowDown"><i class="fa-solid fa-arrow-down"></i>
                 </button>
+                
+                    <img :src="this.images[indexImmagineAttiva]" alt="" class="">
+                    <div class="title-text">
+                        <h2>{{ this.title[indexImmagineAttiva] }}</h2>
+                        <p> {{ this.text[indexImmagineAttiva] }} </p>
+                    </div>
 
-                <img :src="this.images[indexImmagineAttiva]" alt="" class="">
                 <div id="thumb-nail" @mouseover="this.stopAutoPlay" @mouseleave="this.autoPlay">
                     <img v-for="(image, index) in images" :src="image" alt="" :class="indexImmagineAttiva === index ? 'thumb-nail-selected' : '' " class="img-thumb-nail" @click="this.indexImmagineAttiva = index">
                 </div>
